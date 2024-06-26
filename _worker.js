@@ -12,6 +12,8 @@ let sub = '';// 留空则使用内置订阅
 let subconverter = 'subapi-loadbalancing.pages.dev';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假uuid和host订阅。
 let subconfig = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"; //订阅配置文件
 
+let relaysub = ''; //包含待中转节点的订阅
+
 // The user name and password do not contain special characters
 // Setting the address will ignore proxyIP
 // Example:  user:pass@host:port  or  host:port
@@ -71,6 +73,7 @@ export default {
 			sub = env.SUB || sub;
 			subconverter = env.SUBAPI || subconverter;
 			subconfig = env.SUBCONFIG || subconfig;
+			relaysub = env.RELAYSUB || relaysub;
 			if (socks5Address) {
 				try {
 					parsedSocks5Address = socks5AddressParser(socks5Address);
@@ -114,11 +117,14 @@ export default {
 					return new Response(`${fakeConfig}`, { status: 200 });
 				case `/${userID}`: {
 					await sendMessage(`#获取订阅 ${FileName}`, request.headers.get('CF-Connecting-IP'), `UA: ${UA}</tg-spoiler>\n域名: ${url.hostname}\n<tg-spoiler>入口: ${url.pathname + url.search}</tg-spoiler>`);
+					
 					if ((!sub || sub == '') && (addresses.length + addressesapi.length + addressesnotls.length + addressesnotlsapi.length + addressescsv.length) == 0){
-						if (request.headers.get('Host').includes(".workers.dev")) {
-							sub = 'workervless2sub-f1q.pages.dev'; 
-							subconfig = 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini';
+						if ((relaysub && relaysub != '') || ( url.searchParams.has('relaysub') && url.searchParams.get('relaysub'))){
+							relaysub =  relaysub || url.searchParams.get('relaysub') ;
+							sub = 'vless-4ca.pages.dev';
+							subconfig = 'https://nutshell-api.yaoyy.moe/relay.ini';
 						} else {
+							relaysub='';
 							sub = 'vless-4ca.pages.dev';
 							subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini";
 						}
@@ -1337,6 +1343,11 @@ https://github.com/cmliu/edgetunnel
 			url = `https://${hostName}/${fakeUserID}`;
 		} 
 
+		if ((relaysub != '')){
+			url = `${url}|${relaysub}`;
+			
+		}
+
 		if (!userAgent.includes(('CF-Workers-SUB').toLowerCase())){
 			if ((userAgent.includes('clash') && !userAgent.includes('nekobox')) || ( _url.searchParams.has('clash') && !userAgent.includes('subconverter'))) {
 				url = `https://${subconverter}/sub?target=clash&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
@@ -1345,6 +1356,7 @@ https://github.com/cmliu/edgetunnel
 				url = `https://${subconverter}/sub?target=singbox&url=${encodeURIComponent(url)}&insert=false&config=${encodeURIComponent(subconfig)}&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 				isBase64 = false;
 			}
+			
 		}
 		
 		try {
