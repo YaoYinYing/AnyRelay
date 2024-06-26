@@ -122,7 +122,7 @@ export default {
 						if ((relaysub && relaysub != '') || ( url.searchParams.has('relaysub') && url.searchParams.get('relaysub'))){
 							relaysub =  relaysub || url.searchParams.get('relaysub') ;
 							sub = 'vless-4ca.pages.dev';
-							subconfig = 'https://nutshell-api.yaoyy.moe/relay.ini';
+							subconfig = 'https://raw.githubusercontent.com/YaoYinYing/edgetunnel/main/config/relay.ini';
 						} else {
 							relaysub='';
 							sub = 'vless-4ca.pages.dev';
