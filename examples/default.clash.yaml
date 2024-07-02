@@ -48,73 +48,66 @@ rule-providers:
     type: http
     behavior: classical
     path: ./ruleset/GoogleCNProxyIP.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml
     interval: 86400
 
   local_area_network:
     type: http
     behavior: classical
     path: ./ruleset/LocalAreaNetwork.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/LocalAreaNetwork.yaml
     interval: 86400
 
   unban:
     type: http
     behavior: classical
     path: ./ruleset/UnBan.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/UnBan.yaml
     interval: 86400
 
   china_domain:
     type: http
     behavior: classical
     path: ./ruleset/ChinaDomain.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/ChinaDomain.yaml
     interval: 86400
 
   china_media:
     type: http
     behavior: classical
     path: ./ruleset/ChinaMedia.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/ChinaMedia.yaml
     interval: 86400
 
   ban_ad:
     type: http
     behavior: classical
     path: ./ruleset/BanAD.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/BanAD.yaml
     interval: 86400
 
   ban_program_ad:
     type: http
     behavior: classical
     path: ./ruleset/BanProgramAD.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/BanProgramAD.yaml
     interval: 86400
 
   china_company_ip:
     type: http
     behavior: classical
     path: ./ruleset/ChinaCompanyIp.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/ChinaCompanyIp.yaml
     interval: 86400
 
   china_ip:
     type: http
     behavior: classical
     path: ./ruleset/ChinaIp.yaml
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+    url: https://cdn.jsdelivr.net/gh//ACL4SSR/ACL4SSR@master/Clash/Providers/ChinaIp.yaml
     interval: 86400
 
 rules:
-  # 自定义规则
-  ## 您可以在此处插入您补充的自定义规则（请注意保持缩进）
-
-  # Google 中国服务
-  - DOMAIN-SUFFIX,services.googleapis.cn,$app_name
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,$app_name
-
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,$app_name
   - DOMAIN-SUFFIX,services.googleapis.cn,$app_name
   - RULE-SET,google_cn_proxy_ip,$app_name
