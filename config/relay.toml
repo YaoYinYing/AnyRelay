@@ -1,6 +1,3 @@
-[common]
-
-
 [ruleset]
 # Enable generating rules with rulesets
 enabled = true
