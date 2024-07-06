@@ -1,5 +1,7 @@
 
 version = 1
+[custom]
+
 [ruleset]
 # Enable generating rules with rulesets
 enabled = true
@@ -263,7 +265,7 @@ type = "surge-ruleset"
 interval = 86400
 
 
-[custom]
+
 
 [[custom_groups]]
 name = "🛬 国际到达"
