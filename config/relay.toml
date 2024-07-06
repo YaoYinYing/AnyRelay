@@ -86,7 +86,7 @@ url = "http://www.gstatic.com/generate_204"
 name = "🇨🇳 上海虹桥国际机场"
 type = "relay"
 rule = [
-    "📶 运营商优选|🛬 国际到达"
+    "`📶 运营商优选`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -94,7 +94,7 @@ disable_udp = true
 name = "🇭🇰 香港国际机场"
 type = "relay"
 rule = [
-    "🇭🇰 香港节点|🛬 国际到达"
+    "`🇭🇰 香港节点`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -102,7 +102,7 @@ disable_udp = true
 name = "🇯🇵 东京国际机场"
 type = "relay"
 rule = [
-    "🇯🇵 日本节点"|🛬 国际到达"
+    "`🇯🇵 日本节点`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -110,7 +110,7 @@ disable_udp = true
 name = "🇰🇷 仁川国际机场"
 type = "relay"
 rule = [
-    "🇰🇷 韩国节点|🛬 国际到达"
+    "`🇰🇷 韩国节点`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -118,7 +118,7 @@ disable_udp = true
 name = "🇸🇬 新加坡樟宜机场"
 type = "relay"
 rule = [
-    "🇸🇬 狮城节点|🛬 国际到达"
+    "`🇸🇬 狮城节点`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -126,7 +126,7 @@ disable_udp = true
 name = "🇺🇸 洛杉矶国际机场"
 type = "relay"
 rule = [
-    "🇺🇲 美国节点|🛬 国际到达"
+    "`🇺🇲 美国节点`🛬 国际到达"
 ]
 disable_udp = true
 
@@ -134,7 +134,7 @@ disable_udp = true
 name = "🏁 你恭喜我发财我恭喜你精彩机场"
 type = "relay"
 rule = [
-    "🇺🇳 亚太节点|🛬 国际到达"
+    "`🇺🇳 亚太节点`🛬 国际到达"
 ]
 
 disable_udp = true
@@ -144,20 +144,7 @@ disable_udp = true
 name = "☑️ 手动切换"
 type = "select"
 rule = [
-    "🏁 你恭喜我发财我恭喜你精彩机场", 
-    "🇭🇰 香港国际机场", 
-    "🇯🇵 东京国际机场", 
-    "🇰🇷 仁川国际机场", 
-    "🇨🇳 上海虹桥国际机场", 
-    "🇺🇸 洛杉矶国际机场", 
-    "🇸🇬 新加坡樟宜机场", 
-    "🇺🇳 亚太节点", 
-    "🏁 全部节点", 
-    "🇭🇰 香港节点", 
-    "🇸🇬 狮城节点", 
-    "🇯🇵 日本节点", 
-    "🇰🇷 韩国节点", 
-    "📶 运营商优选"
+    "`🏁 你恭喜我发财我恭喜你精彩机场`🇭🇰 香港国际机场`🇯🇵 东京国际机场`🇰🇷 仁川国际机场`🇨🇳 上海虹桥国际机场`🇺🇸 洛杉矶国际机场`🇸🇬 新加坡樟宜机场`🇺🇳 亚太节点`🏁 全部节点`🇭🇰 香港节点`🇸🇬 狮城节点`🇯🇵 日本节点`🇰🇷 韩国节点`📶 运营商优选"
 ]
 disable_udp = false
 
@@ -165,13 +152,7 @@ disable_udp = false
 name = "🛫 国际出发"
 type = "url-test"
 rule = [
-    "🏁 你恭喜我发财我恭喜你精彩机场", 
-    "🇭🇰 香港国际机场", 
-    "🇯🇵 东京国际机场", 
-    "🇰🇷 仁川国际机场", 
-    "🇨🇳 上海虹桥国际机场", 
-    "🇺🇸 洛杉矶国际机场", 
-    "🇸🇬 新加坡樟宜机场"
+    "`🏁 你恭喜我发财我恭喜你精彩机场`🇭🇰 香港国际机场`🇯🇵 东京国际机场`🇰🇷 仁川国际机场`🇨🇳 上海虹桥国际机场`🇺🇸 洛杉矶国际机场`🇸🇬 新加坡樟宜机场"
 ]
 url = "http://www.gstatic.com/generate_204"
 interval = 673
@@ -183,11 +164,7 @@ lazy = false
 name = "📹 油管视频"
 type = "select"
 rule = [
-    "🇺🇳 亚太节点", 
-    "🛫 国际出发", 
-    "🏁 全部节点", 
-    "☑️ 手动切换", 
-    "DIRECT"
+    "`🇺🇳 亚太节点`🛫 国际出发`🏁 全部节点`☑️ 手动切换`DIRECT"
 ]
 disable_udp = false
 
@@ -195,9 +172,7 @@ disable_udp = false
 name = "🚀 节点选择"
 type = "select"
 rule = [
-    "🛫 国际出发", 
-    "🇺🇳 亚太节点", 
-    "🏁 全部节点",
+    "`🛫 国际出发`🇺🇳 亚太节点`🏁 全部节点",
     "☑️ 手动切换"
 ]
 disable_udp = false
@@ -206,9 +181,7 @@ disable_udp = false
 name = "🤨 故障转移"
 type = "fallback"
 rule = [
-    "🇺🇳 亚太节点", 
-    "🛫 国际出发", 
-    "🏁 全部节点"
+    "`🇺🇳 亚太节点`🛫 国际出发`🏁 全部节点"
 ]
 url = "http://www.gstatic.com/generate_204"
 interval = 293
@@ -218,11 +191,7 @@ tolerance = 50
 name = "📲 电报消息"
 type = "select"
 rule = [
-    "🇺🇳 亚太节点", 
-    "🛫 国际出发", 
-    "🏁 全部节点", 
-    "☑️ 手动切换", 
-    "DIRECT"
+    "`🇺🇳 亚太节点`🛫 国际出发`🏁 全部节点`☑️ 手动切换`DIRECT"
 ]
 disable_udp = false
 
