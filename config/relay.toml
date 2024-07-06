@@ -1,4 +1,4 @@
-[custom]
+
 
 [ruleset]
 # Enable generating rules with rulesets
@@ -263,7 +263,7 @@ type = "clash-ruleset"
 interval = 86400
 
 
-
+[custom]
 
 [[custom_groups]]
 name = "☑️ 手动切换"
