@@ -1,3 +1,6 @@
+version = 1
+[custom]
+
 [ruleset]
 # Enable generating rules with rulesets
 enabled = true
