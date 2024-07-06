@@ -1,4 +1,260 @@
 
+version = 1
+
+
+[custom]
+
+[[custom_groups]]
+name = "☑️ 手动切换"
+type = "select"
+rule = ["🏁 你恭喜我发财我恭喜你精彩机场", "🇭🇰 香港国际机场", "🇯🇵 东京国际机场", "🇰🇷 仁川国际机场", "🇨🇳 上海虹桥国际机场", "🇺🇸 洛杉矶国际机场", "🇸🇬 新加坡樟宜机场", "🇺🇳 亚太节点", "🏁 全部节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "📶 运营商优选"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🛫 国际出发"
+type = "url-test"
+rule = ["🏁 你恭喜我发财我恭喜你精彩机场", "🇭🇰 香港国际机场", "🇯🇵 东京国际机场", "🇰🇷 仁川国际机场", "🇨🇳 上海虹桥国际机场", "🇺🇸 洛杉矶国际机场", "🇸🇬 新加坡樟宜机场"]
+url = "http://www.gstatic.com/generate_204"
+interval = 673
+tolerance = 50
+lazy = false
+
+[[custom_groups]]
+name = "🛬 国际到达"
+type = "select"
+rule = ["RelayTarget"]
+disable_udp = false
+
+[[custom_groups]]
+name = "📶 运营商优选"
+type = "load-balance"
+rule = ["^官方|^CM|CT|CU|CF|电信|联通|移动|VIP"]
+interval = 6130
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇭🇰 香港节点"
+type = "load-balance"
+rule = ["港|HK|hk|Hong Kong|HongKong|hongkong|HKG"]
+interval = 5990
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇯🇵 日本节点"
+type = "load-balance"
+rule = ["日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX"]
+interval = 6190
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇺🇲 美国节点"
+type = "load-balance"
+rule = ["美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC"]
+interval = 641
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇹🇼 台湾节点"
+type = "load-balance"
+rule = ["台|新北|彰化|TW|Taiwan|TPE|KHH"]
+interval = 6170
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇸🇬 狮城节点"
+type = "load-balance"
+rule = ["新加坡|坡|狮城|SG|Singapore|SIN"]
+interval = 6770
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇰🇷 韩国节点"
+type = "load-balance"
+rule = ["KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
+interval = 6830
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🏁 全部节点"
+type = "load-balance"
+rule = ["新加坡|坡|狮城|SG|Singapore|SIN|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX|港|HK|hk|Hong Kong|HongKong|hongkong|HKG|^官方|^CM|CT|CU|CF|VIP|电信|联通|移动|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
+interval = 641
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "🇺🇳 亚太节点"
+type = "load-balance"
+rule = ["新加坡|坡|狮城|SG|Singapore|SIN|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX|港|HK|hk|Hong Kong|HongKong|hongkong|HKG|^官方|^CM|CT|CU|CF|VIP|电信|联通|移动|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
+interval = 6910
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+
+[[custom_groups]]
+name = "📹 油管视频"
+type = "select"
+rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🚀 节点选择"
+type = "select"
+rule = ["🛫 国际出发", "🇺🇳 亚太节点", "🏁 全部节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🤨 故障转移"
+type = "fallback"
+rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点"]
+url = "http://www.gstatic.com/generate_204"
+interval = 293
+tolerance = 50
+
+[[custom_groups]]
+name = "📲 电报消息"
+type = "select"
+rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🤖 OpenAi"
+type = "select"
+rule = ["🛫 国际出发"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🎥 奈飞视频"
+type = "select"
+rule = ["🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "📺 巴哈姆特"
+type = "select"
+rule = ["☑️ 手动切换", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "📺 哔哩哔哩"
+type = "select"
+rule = ["DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🌍 国外媒体"
+type = "select"
+rule = ["🛫 国际出发", "🇺🇳 亚太节点", "☑️ 手动切换", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🌏 国内媒体"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "📢 谷歌FCM"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "Ⓜ️ 微软Bing"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "Ⓜ️ 微软云盘"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🍎 苹果服务"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🎮 游戏平台"
+type = "select"
+rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🎶 网易音乐"
+type = "select"
+rule = ["DIRECT", "🛫 国际出发"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🎯 全球直连"
+type = "select"
+rule = ["DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🛑 广告拦截"
+type = "select"
+rule = ["REJECT", "DIRECT"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇨🇳 上海虹桥国际机场"
+type = "relay"
+rule = ["📶 运营商优选", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇭🇰 香港国际机场"
+type = "relay"
+rule = ["🇭🇰 香港节点", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇯🇵 东京国际机场"
+type = "relay"
+rule = ["🇯🇵 日本节点", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇰🇷 仁川国际机场"
+type = "relay"
+rule = ["🇰🇷 韩国节点", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇸🇬 新加坡樟宜机场"
+type = "relay"
+rule = ["🇸🇬 狮城节点", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🇺🇸 洛杉矶国际机场"
+type = "relay"
+rule = ["🇺🇲 美国节点", "🛬 国际到达"]
+disable_udp = false
+
+[[custom_groups]]
+name = "🏁 你恭喜我发财我恭喜你精彩机场"
+type = "relay"
+rule = ["🇺🇳 亚太节点", "🛬 国际到达"]
+disable_udp = false
+
 
 [ruleset]
 # Enable generating rules with rulesets
@@ -261,257 +517,3 @@ group = "🛫 国际出发"
 ruleset = "[]FINAL"
 type = "clash-ruleset"
 interval = 86400
-
-
-[custom]
-
-[[custom_groups]]
-name = "☑️ 手动切换"
-type = "select"
-rule = ["🏁 你恭喜我发财我恭喜你精彩机场", "🇭🇰 香港国际机场", "🇯🇵 东京国际机场", "🇰🇷 仁川国际机场", "🇨🇳 上海虹桥国际机场", "🇺🇸 洛杉矶国际机场", "🇸🇬 新加坡樟宜机场", "🇺🇳 亚太节点", "🏁 全部节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "📶 运营商优选"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🛫 国际出发"
-type = "url-test"
-rule = ["🏁 你恭喜我发财我恭喜你精彩机场", "🇭🇰 香港国际机场", "🇯🇵 东京国际机场", "🇰🇷 仁川国际机场", "🇨🇳 上海虹桥国际机场", "🇺🇸 洛杉矶国际机场", "🇸🇬 新加坡樟宜机场"]
-url = "http://www.gstatic.com/generate_204"
-interval = 673
-tolerance = 50
-lazy = false
-
-[[custom_groups]]
-name = "🛬 国际到达"
-type = "select"
-rule = ["RelayTarget"]
-disable_udp = false
-
-[[custom_groups]]
-name = "📶 运营商优选"
-type = "load-balance"
-rule = ["^官方|^CM|CT|CU|CF|电信|联通|移动|VIP"]
-interval = 6130
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇭🇰 香港节点"
-type = "load-balance"
-rule = ["港|HK|hk|Hong Kong|HongKong|hongkong|HKG"]
-interval = 5990
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇯🇵 日本节点"
-type = "load-balance"
-rule = ["日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX"]
-interval = 6190
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇺🇲 美国节点"
-type = "load-balance"
-rule = ["美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC"]
-interval = 641
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇹🇼 台湾节点"
-type = "load-balance"
-rule = ["台|新北|彰化|TW|Taiwan|TPE|KHH"]
-interval = 6170
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇸🇬 狮城节点"
-type = "load-balance"
-rule = ["新加坡|坡|狮城|SG|Singapore|SIN"]
-interval = 6770
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇰🇷 韩国节点"
-type = "load-balance"
-rule = ["KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
-interval = 6830
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🏁 全部节点"
-type = "load-balance"
-rule = ["新加坡|坡|狮城|SG|Singapore|SIN|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX|港|HK|hk|Hong Kong|HongKong|hongkong|HKG|^官方|^CM|CT|CU|CF|VIP|电信|联通|移动|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
-interval = 641
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "🇺🇳 亚太节点"
-type = "load-balance"
-rule = ["新加坡|坡|狮城|SG|Singapore|SIN|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|Tokyo|NRT|KIX|港|HK|hk|Hong Kong|HongKong|hongkong|HKG|^官方|^CM|CT|CU|CF|VIP|电信|联通|移动|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]
-interval = 6910
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-
-[[custom_groups]]
-name = "📹 油管视频"
-type = "select"
-rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🚀 节点选择"
-type = "select"
-rule = ["🛫 国际出发", "🇺🇳 亚太节点", "🏁 全部节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🤨 故障转移"
-type = "fallback"
-rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点"]
-url = "http://www.gstatic.com/generate_204"
-interval = 293
-tolerance = 50
-
-[[custom_groups]]
-name = "📲 电报消息"
-type = "select"
-rule = ["🇺🇳 亚太节点", "🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🤖 OpenAi"
-type = "select"
-rule = ["🛫 国际出发"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🎥 奈飞视频"
-type = "select"
-rule = ["🛫 国际出发", "🏁 全部节点", "☑️ 手动切换", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "📺 巴哈姆特"
-type = "select"
-rule = ["☑️ 手动切换", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "📺 哔哩哔哩"
-type = "select"
-rule = ["DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🌍 国外媒体"
-type = "select"
-rule = ["🛫 国际出发", "🇺🇳 亚太节点", "☑️ 手动切换", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🌏 国内媒体"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "📢 谷歌FCM"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "Ⓜ️ 微软Bing"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "Ⓜ️ 微软云盘"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "Ⓜ️ 微软服务"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🍎 苹果服务"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🎮 游戏平台"
-type = "select"
-rule = ["DIRECT", "🇺🇳 亚太节点", "☑️ 手动切换"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🎶 网易音乐"
-type = "select"
-rule = ["DIRECT", "🛫 国际出发"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🎯 全球直连"
-type = "select"
-rule = ["DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🛑 广告拦截"
-type = "select"
-rule = ["REJECT", "DIRECT"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇨🇳 上海虹桥国际机场"
-type = "relay"
-rule = ["📶 运营商优选", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇭🇰 香港国际机场"
-type = "relay"
-rule = ["🇭🇰 香港节点", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇯🇵 东京国际机场"
-type = "relay"
-rule = ["🇯🇵 日本节点", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇰🇷 仁川国际机场"
-type = "relay"
-rule = ["🇰🇷 韩国节点", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇸🇬 新加坡樟宜机场"
-type = "relay"
-rule = ["🇸🇬 狮城节点", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🇺🇸 洛杉矶国际机场"
-type = "relay"
-rule = ["🇺🇲 美国节点", "🛬 国际到达"]
-disable_udp = false
-
-[[custom_groups]]
-name = "🏁 你恭喜我发财我恭喜你精彩机场"
-type = "relay"
-rule = ["🇺🇳 亚太节点", "🛬 国际到达"]
-disable_udp = false
