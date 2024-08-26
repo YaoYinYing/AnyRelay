@@ -1,3 +1,5 @@
 IP-CIDR,10.0.0.0/8,no-resolve
 IP-CIDR,172.89.94.0/24,no-resolve
 DOMAIN-SUFFIX,japs.yaoyy.moe,no-resolve
+IP-CIDR,152.70.241.0/24,no-resolve
+DOMAIN-SUFFIX,frp.freefrp.net,no-resolve
