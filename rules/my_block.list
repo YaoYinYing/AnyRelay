@@ -1,2 +1,2 @@
-DOMAIN-SUFFIX,oreoreo.yaoyy.moe
-IP-CIDR,74.48.96.36/32
+DOMAIN-SUFFIX,oreoreo.yaoyy.moe,no-resolve
+IP-CIDR,74.48.96.36/32,no-resolve
