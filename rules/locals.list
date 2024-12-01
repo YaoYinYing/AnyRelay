@@ -25,6 +25,7 @@ IP-CIDR6,fd00::/8,no-resolve
 
 
 DOMAIN-SUFFIX,yaoyy.moe,no-resolve
+DOMAIN,gdcm-is-awesome.yaoyy.moe
 
 # Router managed 路由器管理域名
 DOMAIN,instant.arubanetworks.com
