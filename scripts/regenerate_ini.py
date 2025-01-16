@@ -26,7 +26,6 @@ class Node:
     airport : 对应机场     (e.g. '东京国际机场')
     keyword : 节点名匹配关键字，用'|'分隔
     """
-    group: str
     flag: str
     region: str
     airport: str
@@ -39,7 +38,6 @@ class Node:
         从字典创建 Node 对象
         """
         return cls(
-            group=data["group"].strip(),
             flag=data["flag"].strip(),
             region=data["region"].strip(),
             airport=data["airport"].strip(),
@@ -53,7 +51,6 @@ class Node:
         合并多个节点为一个大节点，group 为洲际/地区分组，其他字段为空
         """
         return cls(
-            group=nodes[0].group,
             flag=continent_flag_dict[nodes[0].continent],
             region=nodes[0].continent,
             airport=f'{nodes[0].continent}随心飞机场',
@@ -133,7 +130,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         Node.merge_as_continent([node for node in nodes if node.continent == continent])
         for continent in continent_flag_dict if continent in all_continents_in_nodes
     ]
-    global_node=Node(group='全球',flag='🌐',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
+    global_node=Node(flag='🌐',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
 
     # 🍺 全部节点（测速1）
     # 例如:
@@ -219,7 +216,6 @@ def get_all_nodes(csv_path: str) -> List[Node]:
         reader = csv.DictReader(f)
         for row in reader:
             node = Node(
-                group=row["group"].strip(),
                 flag=row["flag"].strip(),
                 region=row["region"].strip(),
                 airport=row["airport"].strip(),
