@@ -178,7 +178,19 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     )
 
     # 6) LB_NODES -> 负载均衡组
-    lb_nodes='\n'.join(node.loadbalance_node if use_node_lb else node.urltest_node for node in nodes+continent_nodes+[global_node])
+    lb_nodes_list=[]
+    for c in continent_flag_dict:
+        lb_nodes_list.append(f'\n\n;地区负载均衡组：{c}')
+        lb_nodes_list.extend([node.loadbalance_node if use_node_lb else node.urltest_node for node in nodes if node.continent==c])
+    
+    for n in continent_nodes:
+        lb_nodes_list.append(f'\n\n;大洲负载均衡组：{n.continent}')
+        lb_nodes_list.extend([n.loadbalance_node if use_node_lb else n.urltest_node])
+
+    lb_nodes_list.append('\n\n;全部负载均衡组')
+    lb_nodes_list.append(global_node.loadbalance_node if use_node_lb else global_node.urltest_node)
+
+    lb_nodes='\n'.join(lb_nodes_list)
 
     # 7) RELAY_NODES -> 中继节点组
     relay_nodes='\n'.join(node.relaynode for node in nodes+continent_nodes+[global_node])
