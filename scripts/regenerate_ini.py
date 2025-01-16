@@ -166,7 +166,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     #    例如: custom_proxy_group=☑️ 手动切换`url-test`[]🇯🇵 日本节点`[]🇯🇵 东京国际机场`...
     #    此处也可以直接用 select / url-test，看你的需要
     switch_lines = (
-        "custom_proxy_group=☑️ 手动切换`select`"
+        "custom_proxy_group=☑️ 手动切换`url-test`"
         f"{''.join(node.lb_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
         f"{''.join(node.relay_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
         "`http://www.gstatic.com/generate_204`6000,,50\n"
