@@ -192,6 +192,9 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     # 9) ASIA_NODE -> 亚洲节点
     asian_node=''.join(node.lb_node_name_in_table for node in continent_nodes if node.region=='亚洲')
     
+    # 10) GLOBAL_NODE_GROUP -> 全球节点
+    global_node_group=global_node.lb_node_name_in_table
+
     replace_dict={
         "SPEEDTEST_GROUP_1": speed_test_section_all_nodes,
         "SPEEDTEST_GROUP_2": speed_test_section_loadbalance_lines,
@@ -202,6 +205,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         "RELAY_GROUP": relay_nodes,
         "NODE_LIST": node_list,
         "ASIAN_NODE": asian_node,
+        "GLOBAL_NODE_GROUP": global_node_group,
     }
 
     for k,v in replace_dict.items():
