@@ -130,7 +130,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         Node.merge_as_continent([node for node in nodes if node.continent == continent])
         for continent in continent_flag_dict if continent in all_continents_in_nodes
     ]
-    global_node=Node(flag='🌐',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
+    global_node=Node(flag='🏁',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
 
     # 🍺 全部节点（测速1）
     # 例如:
@@ -180,20 +180,35 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     # 6) LB_NODES -> 负载均衡组
     lb_nodes_list=[]
     for c in continent_flag_dict:
+        if c not in all_continents_in_nodes:
+            continue
         lb_nodes_list.append(f'\n\n;地区负载均衡组：{c}')
         lb_nodes_list.extend([node.loadbalance_node if use_node_lb else node.urltest_node for node in nodes if node.continent==c])
     
     for n in continent_nodes:
         lb_nodes_list.append(f'\n\n;大洲负载均衡组：{n.continent}')
-        lb_nodes_list.extend([n.loadbalance_node if use_node_lb else n.urltest_node])
+        lb_nodes_list.append(n.loadbalance_node if use_node_lb else n.urltest_node)
 
-    lb_nodes_list.append('\n\n;全部负载均衡组')
+    lb_nodes_list.append('\n\n;全球负载均衡组')
     lb_nodes_list.append(global_node.loadbalance_node if use_node_lb else global_node.urltest_node)
 
     lb_nodes='\n'.join(lb_nodes_list)
 
     # 7) RELAY_NODES -> 中继节点组
-    relay_nodes='\n'.join(node.relaynode for node in nodes+continent_nodes+[global_node])
+    relay_nodes_list=[]
+    for c in continent_flag_dict:
+        if c not in all_continents_in_nodes:
+            continue
+        relay_nodes_list.append(f'\n\n;地区中继节点组：{c}')
+        relay_nodes_list.extend([n.relaynode for n in nodes if n.continent==c])
+    
+    for n in continent_nodes:
+        relay_nodes_list.append(f'\n\n;大洲中继节点组：{n.continent}')
+        relay_nodes_list.append(n.relaynode)
+
+    relay_nodes_list.append('\n\n;全球中继节点组')
+    relay_nodes_list.append(global_node.relaynode)
+    relay_nodes='\n'.join(relay_nodes_list)
 
     # 8) NODE_LIST -> 节点列表
     node_list=''.join(node.lb_node_name_in_table for node in nodes+continent_nodes)
@@ -204,6 +219,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     # 10) GLOBAL_NODE_GROUP -> 全球节点
     global_node_group=global_node.lb_node_name_in_table
 
+    # 11）混！合！在！一！起！！！
     replace_dict={
         "SPEEDTEST_GROUP_1": speed_test_section_all_nodes,
         "SPEEDTEST_GROUP_2": speed_test_section_loadbalance_lines,
