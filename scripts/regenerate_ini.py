@@ -265,12 +265,13 @@ def main():
 
     # 读取 CSV 文件，生成 Node 列表
     nodes = get_all_nodes(csv_path)
+    sorted_nodes=sorted(nodes,key=lambda x:x.continent)
 
 
     for ret,use_lb in {
         "config/relay.ini": True,
         "config/relay_no_lb.ini": False}.items():
-        ini_content = generate_ini(nodes, template_content,use_node_lb=use_lb)
+        ini_content = generate_ini(sorted_nodes, template_content,use_node_lb=use_lb)
         with open(ret, "w", encoding="utf-8") as f:
             f.write(ini_content)
 
