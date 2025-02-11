@@ -1,5 +1,5 @@
 flag,region,airport,keyword,continent
-🇨🇳,内地,上海虹桥国际机场,"^官方|^CMCC|CT|CU|CF|电信|联通|移动|VIP|请勿测速|优选域名",亚洲
+🇨🇳,内地,上海虹桥国际机场,"^官方|^CMCC|CT|CU|CF|电信|联通|移动|VIP|^请勿测速|优选域名",亚洲
 🇭🇰,香港,香港国际机场,"港|HK|hk|Hong Kong|HongKong|hongkong|HKG",亚洲
 🇲🇴,澳门,澳门国际机场,"澳门|macau|Macau",亚洲
 🇹🇼,台湾,桃园国际机场,"台|新北|彰化|TW|Taiwan|TPE|KHH",亚洲
