@@ -1,4 +1,7 @@
 DOMAIN-SUFFIX,notebooklm.google,no-resolve
 DOMAIN-SUFFIX,notebooklm.google.com,no-resolve
 DOMAIN-SUFFIX,colab.research.google.com,no-resolve
-DOMAIN-SUFFIX,openai.com,no-resolve
+DOMAIN-SUFFIX,github.com,no-resolve
+DOMAIN-SUFFIX,benchling.com,no-resolve
+DOMAIN-SUFFIX,translate.google.com,no-resolve
+DOMAIN-SUFFIX,githubusercontent.com,no-resolve
