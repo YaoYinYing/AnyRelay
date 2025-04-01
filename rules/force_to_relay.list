@@ -19,3 +19,4 @@ DOMAIN-SUFFIX,myaccount.google.com,no-resolve
 DOMAIN-SUFFIX,contacts.google.com,no-resolve
 DOMAIN-SUFFIX,meet.google.com,no-resolve
 DOMAIN-SUFFIX,githubusercontent.com,no-resolve
+DOMAIN-SUFFIX,s3.amazonaws.com,no-resolve
