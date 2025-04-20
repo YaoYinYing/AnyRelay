@@ -131,7 +131,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         for continent in continent_flag_dict if continent in all_continents_in_nodes
     ]
     global_node=Node(flag='🏁',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
-    unreconized_node=Node(flag='🤡',region='未识别',airport='未识别',keyword=f'^((?!{merged_keywords}).)*$',continent='其他')
+    unreconized_node=Node(flag='🤡',region='未识别',airport='未识别',keyword=f'^((?!{merged_keywords}|RelayTarget).)*$',continent='其他')
 
     # 🍺 全部节点（测速1）
     # 例如:
