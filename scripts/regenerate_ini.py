@@ -131,6 +131,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         for continent in continent_flag_dict if continent in all_continents_in_nodes
     ]
     global_node=Node(flag='🏁',region='全球',airport='全球随心飞机场',keyword=merged_keywords,continent='全球')
+    unreconized_node=Node(flag='🤡',region='未识别',airport='未识别',keyword=f'^((?!{merged_keywords}).)*$',continent='其他')
 
     # 🍺 全部节点（测速1）
     # 例如:
@@ -147,7 +148,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
 
     speed_test_section_loadbalance_lines = (
         "custom_proxy_group=🍷 负载均衡（测速2）`url-test"
-        f"{''.join(node.lb_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
+        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
         "`http://www.gstatic.com/generate_204`6100,,50"
     )
 
@@ -155,7 +156,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     # 3) 🥂 转发节点（测速3） -> 每个 Node 生成 relay 规则
     speed_test_section_relay_lines = (
         'custom_proxy_group=🥂 转发节点（测速3）`url-test'
-        f"{''.join(node.relay_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
         '`http://www.gstatic.com/generate_204`620,,50'
     )
     
@@ -164,8 +165,8 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     #    此处也可以直接用 select / url-test，看你的需要
     switch_lines = (
         "custom_proxy_group=☑️ 手动切换`url-test`"
-        f"{''.join(node.lb_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
-        f"{''.join(node.relay_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
+        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
         "`http://www.gstatic.com/generate_204`6000,,50\n"
     )
 
@@ -173,42 +174,52 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     #    例如: custom_proxy_group=🛫 国际出发`url-test`[]🇯🇵 东京国际机场`...
     departure_lines = (
         "custom_proxy_group=🛫 国际出发`url-test`"
-        f"{''.join(node.relay_node_name_in_table for node in nodes+continent_nodes+[global_node])}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
         "`http://www.gstatic.com/generate_204`5000,,50\n"
     )
 
     # 6) LB_NODES -> 负载均衡组
     lb_nodes_list=[]
+
+    lb_nodes_list.append('\n\n;全球负载均衡组')
+    lb_nodes_list.append(global_node.loadbalance_node if use_node_lb else global_node.urltest_node)
+
+    for n in continent_nodes:
+        lb_nodes_list.append(f'\n\n;大洲负载均衡组：{n.continent}')
+        lb_nodes_list.append(n.loadbalance_node if use_node_lb else n.urltest_node)
+
+
     for c in continent_flag_dict:
         if c not in all_continents_in_nodes:
             continue
         lb_nodes_list.append(f'\n\n;地区负载均衡组：{c}')
         lb_nodes_list.extend([node.loadbalance_node if use_node_lb else node.urltest_node for node in nodes if node.continent==c])
-    
-    for n in continent_nodes:
-        lb_nodes_list.append(f'\n\n;大洲负载均衡组：{n.continent}')
-        lb_nodes_list.append(n.loadbalance_node if use_node_lb else n.urltest_node)
 
-    lb_nodes_list.append('\n\n;全球负载均衡组')
-    lb_nodes_list.append(global_node.loadbalance_node if use_node_lb else global_node.urltest_node)
 
     lb_nodes='\n'.join(lb_nodes_list)
 
     # 7) RELAY_NODES -> 中继节点组
     relay_nodes_list=[]
-    for c in continent_flag_dict:
-        if c not in all_continents_in_nodes:
-            continue
-        relay_nodes_list.append(f'\n\n;地区中继节点组：{c}')
-        relay_nodes_list.extend([n.relaynode for n in nodes if n.continent==c])
+
+    relay_nodes_list.append('\n\n;全球中继节点组')
+    relay_nodes_list.append(global_node.relaynode)
+    
     
     for n in continent_nodes:
         relay_nodes_list.append(f'\n\n;大洲中继节点组：{n.continent}')
         relay_nodes_list.append(n.relaynode)
 
-    relay_nodes_list.append('\n\n;全球中继节点组')
-    relay_nodes_list.append(global_node.relaynode)
+    for c in continent_flag_dict:
+        if c not in all_continents_in_nodes:
+            continue
+        relay_nodes_list.append(f'\n\n;地区中继节点组：{c}')
+        relay_nodes_list.extend([n.relaynode for n in nodes if n.continent==c])
+
+    relay_nodes_list.append('\n\n;未识别中继节点组')
+    relay_nodes_list.append(unreconized_node.relaynode)
+
     relay_nodes='\n'.join(relay_nodes_list)
+
 
     # 8) NODE_LIST -> 节点列表
     node_list=''.join(node.lb_node_name_in_table for node in nodes+continent_nodes)
@@ -231,6 +242,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         "NODE_LIST": node_list,
         "ASIAN_NODE": asian_node,
         "GLOBAL_NODE_GROUP": global_node_group,
+        "UNRECOGNIZED_GROUP": unreconized_node.loadbalance_node if use_node_lb else unreconized_node.urltest_node,
     }
 
     for k,v in replace_dict.items():
