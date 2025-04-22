@@ -151,7 +151,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
 
     speed_test_section_loadbalance_lines = (
         "custom_proxy_group=🍷 负载均衡（测速2）`url-test"
-        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
+        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
         "`http://www.gstatic.com/generate_204`6100,,50"
     )
 
@@ -159,7 +159,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     # 3) 🥂 转发节点（测速3） -> 每个 Node 生成 relay 规则
     speed_test_section_relay_lines = (
         'custom_proxy_group=🥂 转发节点（测速3）`url-test'
-        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
         '`http://www.gstatic.com/generate_204`620,,50'
     )
     
@@ -168,8 +168,8 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     #    此处也可以直接用 select / url-test，看你的需要
     switch_lines = (
         "custom_proxy_group=☑️ 手动切换`url-test`"
-        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
-        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
+        f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
         "`http://www.gstatic.com/generate_204`6000,,50\n"
     )
 
@@ -177,7 +177,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     #    例如: custom_proxy_group=🛫 国际出发`url-test`[]🇯🇵 东京国际机场`...
     departure_lines = (
         "custom_proxy_group=🛫 国际出发`url-test`"
-        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes+[unreconized_node])}"
+        f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
         "`http://www.gstatic.com/generate_204`5000,,50\n"
     )
 
