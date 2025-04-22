@@ -109,6 +109,9 @@ class Node:
             f"custom_proxy_group={self.flag} {self.airport}`relay`"
             f"[]{self.flag} {self.region}节点`[]🛬 国际到达"
         )
+    @property
+    def keywords_list(self) -> list:
+        return self.keyword.split('|')
 
 def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=False) -> str:
     """
@@ -124,7 +127,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         all_keywords.append(node.keyword)
     # 将所有关键字合并成一个大字符串 (注意去重或其他处理)
     # 这里简单拼接，用 '|' 分隔
-    merged_keywords = "|".join(all_keywords)
+    merged_keywords = "|".join(all_keywords)+'|!加入|!CMLiussss|!加入我的频道'
     all_continents_in_nodes=set([node.continent for node in nodes])
     continent_nodes=[
         Node.merge_as_continent([node for node in nodes if node.continent == continent])
