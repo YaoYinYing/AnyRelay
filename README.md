@@ -2,9 +2,12 @@
 
 AnyRelay is a Python project to dynamically create ClashMeta/Mihomo proxy configurations containing relay nodes towards the target nodes.
 
+>[!WARNING]
+> This project is designed and developed for learning, research and security testing purposes only. It aims to provide a tool for security researchers, academics and technology enthusiasts to understand network privacy and practice communication technology.
+
 ## Purpose
 
-This project is designed and developed for learning, research and security testing purposes only. It aims to provide a tool for security researchers, academics and technology enthusiasts to understand and practice network communication technology.
+AnyRelay is designed following the basic principles of privacy and security, suggesting that any other proxy nodes and non-open-source facilities provided by other parties are not secure enough to meet the data transfering requirements of the user. As the results, AnyRelay is developed utilizing the route mechanism and rules of ClashMeta/Mihomo, keep personal data being transferred only through the trustable relay nodes, yet still keep the data transfering speed as fast as possible. To achieve this goal, a self-hosted or trustable relay node is required.
 
 ## Legality
 
@@ -25,8 +28,9 @@ Users must comply with local laws and regulations when downloading and using the
 2. A subconverter backend that supports explicitly anoucement of loadbalance strategies of `loadbalance` nodes.
 3. One or more relay target nodes whose names started with `RelayTarget`.
    1. Relay target can be `shadowsocks` or `socks` nodes. `shadowsocks` nodes can be used if user wants to customize the outbound proxy(wireguard, for example) in backends like Xray, yet may cause higher computation cost in encryption and decrypition processes. Instead, `socks` nodes is much simpler yet may have higher latency. I recommend creating `socks` nodes via [Dante](https://www.digitalocean.com/community/tutorials/how-to-set-up-dante-proxy-on-ubuntu-20-04).
-   2. Pls remind that `socks` nodes without username/password and tls are not secure.
-   3. A proper static `socks` node configuration can be stored at Gist like:
+   2. It doesn't matter whether the relay target node is blocked by the GFW.
+   3. Please ensure that the relay target node ip is real or domain name is resolvable to the real IP and not behind a CDN provider.
+   4. A proper static `socks` node configuration can be stored at Gist like:
 
       ```yml
       port: 7892
@@ -52,6 +56,9 @@ Users must comply with local laws and regulations when downloading and using the
             - REJECT
       rules: []
       ```
+
+>[!WARNING]
+>Please remind that `socks` nodes without username/password and tls are not secure. As AnyRelay is designed for self-hosted privacy control in zero trust network environment, one should not use target nodes without garanteed security.
 
 ## Project Tree
 
