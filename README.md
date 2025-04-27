@@ -23,7 +23,7 @@ Users must comply with local laws and regulations when downloading and using the
 1. A subconverter frontend that supports customized backend.
 2. A subconverter backend that supports explicitly anoucement of loadbalance strategies of `loadbalance` nodes.
 3. One or more relay target nodes whose names started with `RelayTarget`.
-   1. Relay target can be `shadowsocks` or `socks` nodes. `shadowsocks` nodes can be used if user wants to customize the outbound proxy(wireguard, for example) in backends like Xray, yet may cause higher computation cost in encryption and decrypition processes. Instead, `socks` nodes is much more simple yet may have higher latency. I recommend creating `socks` nodes via [Dante](https://www.digitalocean.com/community/tutorials/how-to-set-up-dante-proxy-on-ubuntu-20-04).
+   1. Relay target can be `shadowsocks` or `socks` nodes. `shadowsocks` nodes can be used if user wants to customize the outbound proxy(wireguard, for example) in backends like Xray, yet may cause higher computation cost in encryption and decrypition processes. Instead, `socks` nodes is much simpler yet may have higher latency. I recommend creating `socks` nodes via [Dante](https://www.digitalocean.com/community/tutorials/how-to-set-up-dante-proxy-on-ubuntu-20-04).
    2. Pls remind that `socks` nodes without username/password and tls are not secure.
 
 ## Project Tree
