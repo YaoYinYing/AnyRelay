@@ -16,7 +16,8 @@ Users must comply with local laws and regulations when downloading and using the
 2. Run `python scripts/regenerate_ini.py`
 3. Git add, commit, and push
 4. (optional) Restart the subconverter backend(e.g., docker stop & docker rm & docker run), if one needs to clear the cached files or remove logs and wishes to take this update immediately.
-5. Refresh the subscribtion urls on ClashMeta/Mihomo clients.
+5. (prequisite) Go to the subconverter frontend to compose the subscription url, and add the url to the subscription urls field on Clash Meta/Mihomo clients.
+6. Refresh the subscribtion urls on ClashMeta/Mihomo clients.
 
 ## Dependencies
 
