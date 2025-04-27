@@ -25,6 +25,32 @@ Users must comply with local laws and regulations when downloading and using the
 3. One or more relay target nodes whose names started with `RelayTarget`.
    1. Relay target can be `shadowsocks` or `socks` nodes. `shadowsocks` nodes can be used if user wants to customize the outbound proxy(wireguard, for example) in backends like Xray, yet may cause higher computation cost in encryption and decrypition processes. Instead, `socks` nodes is much simpler yet may have higher latency. I recommend creating `socks` nodes via [Dante](https://www.digitalocean.com/community/tutorials/how-to-set-up-dante-proxy-on-ubuntu-20-04).
    2. Pls remind that `socks` nodes without username/password and tls are not secure.
+   3. A proper static `socks` node configuration can be stored at Gist like:
+
+      ```yml
+      port: 7892
+      socks-port: 7891
+      allow-lan: true
+      mode: rule
+      log-level: info
+      external-controller: ""
+      proxies:
+      - name: RelayTarget-0
+         type: socks5
+         server: <server-ip-or-domain>
+         port: <port-id>
+         username: <username>
+         password: <password>
+         tls: true
+         udp: true
+      proxy-groups:
+      - name: Relay
+         type: select
+         proxies:
+            - local socks5
+            - REJECT
+      rules: []
+      ```
 
 ## Project Tree
 
