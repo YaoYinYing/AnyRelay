@@ -1,3 +1,4 @@
+![](images/AnyRelay.png)
 # AnyRelay
 
 AnyRelay is a Python project to dynamically create ClashMeta/Mihomo proxy configurations containing relay nodes towards the target nodes.
@@ -7,7 +8,7 @@ AnyRelay is a Python project to dynamically create ClashMeta/Mihomo proxy config
 
 ## Purpose
 
-AnyRelay is designed following the basic principles of privacy and security, supposing that any other proxy nodes and non-open-source facilities provided by other parties are not secure enough to meet the data transfering requirements of the user. As the results, AnyRelay is developed utilizing the route mechanism and rules of ClashMeta/Mihomo, ensuring personal data being transferred only through the trustable relay nodes, yet still keeping the data transfering speed as fast as possible. To achieve this goal, self-hosted or trustable relay nodes are required.
+AnyRelay is designed following the basic principles of privacy and security, supposing that any other proxy nodes and non-open-source facilities provided by other parties are not secure enough to meet the data transfering requirements of the user. As the results, AnyRelay is developed utilizing the traffic route mechanism and rules of ClashMeta/Mihomo, ensuring personal data being transferred only through the trustable relay nodes, yet still keeping the transfering speed as fast as possible. To achieve this goal, self-hosted or trustable relay nodes are required.
 
 ## Legality
 
