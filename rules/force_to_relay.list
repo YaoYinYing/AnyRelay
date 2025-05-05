@@ -4,4 +4,5 @@ DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,benchling.com
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN,s3.amazonaws.com
