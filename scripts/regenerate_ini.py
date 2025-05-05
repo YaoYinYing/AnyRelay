@@ -82,7 +82,7 @@ class Node:
         """
         return (
             f"custom_proxy_group={self.flag} {self.region}节点`load-balance`"
-            f"({self.keyword})"
+            f"({self.keywords_strict})"
             "`[]REJECT`http://www.gstatic.com/generate_204`6537,,50`round-robin"
         )
 
@@ -94,7 +94,7 @@ class Node:
         """
         return (
             f"custom_proxy_group={self.flag} {self.region}节点`url-test`"
-            f"({self.keyword})"
+            f"({self.keywords_strict})"
             "`[]REJECT`http://www.gstatic.com/generate_204`300,,50"
         )
 
@@ -112,6 +112,10 @@ class Node:
     @property
     def keywords_list(self) -> list:
         return self.keyword.split('|')
+    
+    @property
+    def keywords_strict(self) -> str:
+        return f'^(?!.*RelayTarget).*({self.keyword})'
 
 def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=False) -> str:
     """
