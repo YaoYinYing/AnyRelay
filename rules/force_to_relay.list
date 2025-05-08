@@ -1,8 +1,12 @@
 DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,gemini.google
 DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,benchling.com
 DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,zoom.us
 DOMAIN,s3.amazonaws.com
+DOMAIN,gemini.google
+DOMAIN,notebooklm.google
