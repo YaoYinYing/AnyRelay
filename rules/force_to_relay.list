@@ -10,3 +10,5 @@ DOMAIN-SUFFIX,zoom.us
 DOMAIN,s3.amazonaws.com
 DOMAIN,gemini.google
 DOMAIN,notebooklm.google
+DOMAIN-SUFFIX,ipip.net
+DOMAIN,ipip.net
