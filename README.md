@@ -3,6 +3,8 @@
 
 AnyRelay is a Python project to dynamically create ClashMeta/Mihomo proxy configurations containing relay nodes towards the target nodes.
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/YaoYinYing/AnyRelay)
+
 >[!WARNING]
 > This project is designed and developed for learning, research and security testing purposes only. It aims to provide a tool for security researchers, academics and technology enthusiasts to understand network privacy and practice communication technology.
 
