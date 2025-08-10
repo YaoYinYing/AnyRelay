@@ -41,7 +41,7 @@ class Node:
             flag=data["flag"].strip(),
             region=data["region"].strip(),
             airport=data["airport"].strip(),
-            keyword=data["keyword"].strip(),
+            keyword=data["flag"].strip()+ "|" + data["keyword"].strip(),
             continent=data["continent"].strip(),
         )
     
@@ -266,7 +266,7 @@ def get_all_nodes(csv_path: str) -> List[Node]:
                 flag=row["flag"].strip(),
                 region=row["region"].strip(),
                 airport=row["airport"].strip(),
-                keyword=row["keyword"].strip(),
+                keyword=row["flag"].strip()+ "|" + row["keyword"].strip(),
                 continent=row["continent"].strip(),
             )
             nodes.append(node)
