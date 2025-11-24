@@ -1,1 +1,9 @@
 DOMAIN,oreoreo.yaoyy.moe,no-resolve
+
+# disable apple upgrade
+DOMAIN,swdist.apple.com,no-resolve
+DOMAIN,swscan.apple.com,no-resolve
+DOMAIN,swcdn.apple.com,no-resolve
+DOMAIN,gdmf.apple.com,no-resolve
+DOMAIN,mesu.apple.com,no-resolve
+DOMAIN,xp.apple.com,no-resolve
