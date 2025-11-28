@@ -1,0 +1,4 @@
+# some domains require a ip w/ low fraud score.
+
+DOMAIN,login.tailscale.com
+DOMAIN,scholar.google.com
