@@ -83,7 +83,7 @@ class Node:
         return (
             f"custom_proxy_group={self.flag} {self.region}节点`load-balance`"
             f"({self.keywords_strict})"
-            "`[]REJECT`http://www.gstatic.com/generate_204`6537,,50`round-robin"
+            "`[]REJECT`http://www.gstatic.com/generate_204`6537,,100`round-robin"
         )
 
     @property
@@ -95,7 +95,7 @@ class Node:
         return (
             f"custom_proxy_group={self.flag} {self.region}节点`url-test`"
             f"({self.keywords_strict})"
-            "`[]REJECT`http://www.gstatic.com/generate_204`300,,50"
+            "`[]REJECT`http://www.gstatic.com/generate_204`300,,100"
         )
 
     @property
@@ -147,7 +147,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     speed_test_section_all_nodes = (
         "custom_proxy_group=🍺 全部节点（测速1）`url-test`"
         f"({merged_keywords})"
-        "`[]REJECT`http://www.gstatic.com/generate_204`600,,50`round-robin\n"
+        "`[]REJECT`http://www.gstatic.com/generate_204`301,,100`round-robin\n"
     )
 
     # 2) 🍷 负载均衡（测速2） -> 每个 Node 都会生成一个 load-balance 规则
@@ -156,7 +156,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     speed_test_section_loadbalance_lines = (
         "custom_proxy_group=🍷 负载均衡（测速2）`url-test"
         f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
-        "`http://www.gstatic.com/generate_204`6100,,50"
+        "`http://www.gstatic.com/generate_204`311,,150"
     )
 
 
@@ -164,7 +164,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     speed_test_section_relay_lines = (
         'custom_proxy_group=🥂 转发节点（测速3）`url-test'
         f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
-        '`http://www.gstatic.com/generate_204`620,,50'
+        '`http://www.gstatic.com/generate_204`321,,1000'
     )
     
     # 4) ☑️ 手动切换 -> 包含所有 🍷 + 🥂 的节点名
@@ -174,7 +174,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
         "custom_proxy_group=☑️ 手动切换`url-test`"
         f"{''.join(node.lb_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
         f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
-        "`http://www.gstatic.com/generate_204`6000,,50\n"
+        "`http://www.gstatic.com/generate_204`600,,50\n"
     )
 
     # 5) 🛫 国际出发 -> 包含所有 🥂 的节点名
@@ -182,7 +182,7 @@ def generate_ini(nodes: List[Node], template_content: str, use_node_lb:bool=Fals
     departure_lines = (
         "custom_proxy_group=🛫 国际出发`url-test`"
         f"{''.join(node.relay_node_name_in_table for node in [global_node]+continent_nodes+nodes)}"
-        "`http://www.gstatic.com/generate_204`5000,,50\n"
+        "`http://www.gstatic.com/generate_204`300,,50\n"
     )
 
     # 6) LB_NODES -> 负载均衡组
