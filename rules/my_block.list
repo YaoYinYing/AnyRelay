@@ -1,4 +1,7 @@
+# block direct connects
 DOMAIN,oreoreo.yaoyy.moe,no-resolve
+DOMAIN,oreoreo4.yaoyy.moe,no-resolve
+DOMAIN,oreoreo6.yaoyy.moe,no-resolve
 
 # disable apple upgrade
 DOMAIN,swdist.apple.com,no-resolve
