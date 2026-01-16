@@ -1,0 +1,22 @@
+
+# AGIS VPN IP
+IP-CIDR,218.17.88.0/24,no-resolve
+
+# internal
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,172.89.94.0/24,no-resolve
+
+
+DOMAIN-SUFFIX,japs.yaoyy.moe,no-resolve
+IP-CIDR,152.70.241.0/24,no-resolve
+DOMAIN-SUFFIX,frp.freefrp.net,no-resolve
+DOMAIN-SUFFIX,alibabachengdun.com,no-resolve
+DOMAIN-SUFFIX,alipan.com,no-resolve
+DOMAIN-SUFFIX,oray.com,no-resolve
+DOMAIN-SUFFIX,doubao.com,no-resolve
+
+# wechat
+DOMAIN-SUFFIX,weixinbridge.com,no-resolve
+
+# cn univerities
+DOMAIN-SUFFIX,edu.cn,no-resolve
