@@ -1,2 +1,3 @@
 # a domain list that requires a clean IP for some reasons
 DOMAIN,scholar.google.com
+DOMAIN,ssl.gstatic.com
