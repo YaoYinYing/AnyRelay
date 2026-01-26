@@ -3,6 +3,7 @@ DOMAIN,scholar.google.com
 DOMAIN,safebrowsing.google.com
 
 # these domain are used for analytics
-DOMAIN, beacons5.gvt3.com
-DOMAIN, beacons.gcp.gvt2.com
-DOMAIN, optimizationguide-pa.googleapis.com
+DOMAIN,beacons5.gvt3.com
+DOMAIN,beacons.gcp.gvt2.com
+DOMAIN,optimizationguide-pa.googleapis.com
+DOMAIN,ssl.gstatic.com
