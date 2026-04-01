@@ -20,3 +20,6 @@ DOMAIN-SUFFIX,weixinbridge.com,no-resolve
 
 # cn univerities
 DOMAIN-SUFFIX,edu.cn,no-resolve
+
+# google direct
+DOMAIN,dl.google.com
