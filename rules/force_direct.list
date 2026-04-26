@@ -20,6 +20,16 @@ DOMAIN-SUFFIX,weixinbridge.com,no-resolve
 DOMAIN-SUFFIX,tencent.com,no-resolve
 DOMAIN-SUFFIX,wechat.com,no-resolve
 DOMAIN-SUFFIX,weixin.com,no-resolve
+PROCESS-NAME,WeChat,no-resolve
+PROCESS-NAME,WeChatAppEx,no-resolve
+PROCESS-NAME,WeChat.exe,no-resolve
+PROCESS-NAME,WeChatApp.exe,no-resolve
+DOMAIN-SUFFIX,weixin.qq.com,no-resolve
+DOMAIN-SUFFIX,wechat.com,no-resolve
+DOMAIN-SUFFIX,qq.com,no-resolve
+DOMAIN-SUFFIX,qpic.cn,no-resolve
+DOMAIN-SUFFIX,gtimg.com,no-resolve
+DOMAIN-SUFFIX,myqcloud.com,no-resolve
 
 # cn univerities
 DOMAIN-SUFFIX,edu.cn,no-resolve
