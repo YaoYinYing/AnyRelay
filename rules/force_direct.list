@@ -1,38 +1,38 @@
 
 # AGIS VPN IP
-IP-CIDR,218.17.88.0/24,no-resolve
+IP-CIDR,218.17.88.0/24
 
 # internal
-IP-CIDR,10.0.0.0/8,no-resolve
-IP-CIDR,172.89.94.0/24,no-resolve
+IP-CIDR,10.0.0.0/8
+IP-CIDR,172.89.94.0/24
 
 
-DOMAIN-SUFFIX,japs.yaoyy.moe,no-resolve
-IP-CIDR,152.70.241.0/24,no-resolve
-DOMAIN-SUFFIX,frp.freefrp.net,no-resolve
-DOMAIN-SUFFIX,alibabachengdun.com,no-resolve
-DOMAIN-SUFFIX,alipan.com,no-resolve
-DOMAIN-SUFFIX,oray.com,no-resolve
-DOMAIN-SUFFIX,doubao.com,no-resolve
+DOMAIN-SUFFIX,japs.yaoyy.moe
+IP-CIDR,152.70.241.0/24
+DOMAIN-SUFFIX,frp.freefrp.net
+DOMAIN-SUFFIX,alibabachengdun.com
+DOMAIN-SUFFIX,alipan.com
+DOMAIN-SUFFIX,oray.com
+DOMAIN-SUFFIX,doubao.com
 
 # wechat
-DOMAIN-SUFFIX,weixinbridge.com,no-resolve
-DOMAIN-SUFFIX,tencent.com,no-resolve
-DOMAIN-SUFFIX,wechat.com,no-resolve
-DOMAIN-SUFFIX,weixin.com,no-resolve
-PROCESS-NAME,WeChat,no-resolve
-PROCESS-NAME,WeChatAppEx,no-resolve
-PROCESS-NAME,WeChat.exe,no-resolve
-PROCESS-NAME,WeChatApp.exe,no-resolve
-DOMAIN-SUFFIX,weixin.qq.com,no-resolve
-DOMAIN-SUFFIX,wechat.com,no-resolve
-DOMAIN-SUFFIX,qq.com,no-resolve
-DOMAIN-SUFFIX,qpic.cn,no-resolve
-DOMAIN-SUFFIX,gtimg.com,no-resolve
-DOMAIN-SUFFIX,myqcloud.com,no-resolve
+DOMAIN-SUFFIX,weixinbridge.com
+DOMAIN-SUFFIX,tencent.com
+DOMAIN-SUFFIX,wechat.com
+DOMAIN-SUFFIX,weixin.com
+PROCESS-NAME,WeChat
+PROCESS-NAME,WeChatAppEx
+PROCESS-NAME,WeChat.exe
+PROCESS-NAME,WeChatApp.exe
+DOMAIN-SUFFIX,weixin.qq.com
+DOMAIN-SUFFIX,wechat.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,gtimg.com
+DOMAIN-SUFFIX,myqcloud.com
 
 # cn univerities
-DOMAIN-SUFFIX,edu.cn,no-resolve
+DOMAIN-SUFFIX,edu.cn
 
 # google direct
 DOMAIN,dl.google.com
