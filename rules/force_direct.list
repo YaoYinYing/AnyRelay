@@ -35,3 +35,7 @@ DOMAIN-SUFFIX,edu.cn,no-resolve
 
 # google direct
 DOMAIN,dl.google.com,no-resolve
+
+
+# deepseek api
+DOMAIN,platform.deepseek.com
