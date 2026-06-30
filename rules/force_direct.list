@@ -30,6 +30,9 @@ DOMAIN-SUFFIX,qpic.cn,no-resolve
 DOMAIN-SUFFIX,gtimg.com,no-resolve
 DOMAIN-SUFFIX,myqcloud.com,no-resolve
 
+# SCI
+DOMAIN-SUFFIX,ablesci.com,no-resolve
+
 # cn univerities
 DOMAIN-SUFFIX,edu.cn,no-resolve
 
