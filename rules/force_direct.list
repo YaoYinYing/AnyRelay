@@ -42,3 +42,6 @@ DOMAIN,dl.google.com,no-resolve
 
 # deepseek api
 DOMAIN,platform.deepseek.com
+
+# siliconflow
+DOMAIN-SUFFIX,siliconflow.com
