@@ -45,3 +45,8 @@ DOMAIN,platform.deepseek.com
 
 # siliconflow
 DOMAIN-SUFFIX,siliconflow.com
+
+
+# government sites
+DOMAIN-SUFFIX,gov.cn
+DOMAIN-SUFFIX,fjrsda.com
