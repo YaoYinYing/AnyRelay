@@ -1,0 +1,40 @@
+# ZeroTier and Tailscale must not depend on a selectable proxy group.
+# Keep this ruleset above all proxy rules and map it directly to DIRECT.
+
+# VPN daemon traffic: control, discovery, relay, and peer underlay flows.
+PROCESS-NAME,tailscaled
+PROCESS-NAME,tailscaled.exe
+PROCESS-NAME,tailscale
+PROCESS-NAME,Tailscale
+PROCESS-NAME,Tailscale.exe
+PROCESS-NAME,IPNExtension
+PROCESS-NAME,io.tailscale.ipn.macsys.network-extension
+PROCESS-NAME,com.tailscale.ipn
+PROCESS-NAME,com.tailscale.ipn.beta
+PROCESS-NAME,zerotier-one
+PROCESS-NAME,zerotier-one.exe
+PROCESS-NAME,zerotier-one_x64.exe
+PROCESS-NAME,com.zerotier.one
+
+# Tailscale coordination, DERP, and tailnet DNS names.
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,ts.net
+
+# ZeroTier roots, controllers, and service endpoints.
+DOMAIN-SUFFIX,zerotier.com
+DOMAIN-SUFFIX,zerotiercentral.com
+
+# Tailscale node and service address space.
+IP-CIDR,100.64.0.0/10,no-resolve
+IP-CIDR6,fd7a:115c:a1e0::/48,no-resolve
+IP-CIDR,192.200.0.0/24,no-resolve
+IP-CIDR6,2606:b740:49::/48,no-resolve
+IP-CIDR,199.165.136.0/24,no-resolve
+IP-CIDR6,2606:b740:1::/48,no-resolve
+
+# Common private address space used by ZeroTier managed routes.
+# Add any custom public managed subnet here as an IP-CIDR/IP-CIDR6 rule.
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,192.168.0.0/16,no-resolve
+IP-CIDR6,fc00::/7,no-resolve

@@ -25,6 +25,12 @@ Users must comply with local laws and regulations when downloading and using the
 5. (prequisite) Go to the subconverter frontend to compose the subscription url, and add the url to the subscription urls field on Clash Meta/Mihomo clients.
 6. Refresh the subscribtion urls on ClashMeta/Mihomo clients.
 
+## ZeroTier and Tailscale coexistence
+
+Every shipped configuration loads `rules/vpn_direct.list` as its first routing ruleset and maps it to `DIRECT`. The ruleset bypasses selectable proxy groups for the ZeroTier and Tailscale daemons, their control and relay domains, Tailscale address space, and the private address ranges commonly used by ZeroTier managed routes.
+
+ZeroTier networks may use an arbitrary managed IP range. If a network uses public address space, add that exact range to `rules/vpn_direct.list` as an `IP-CIDR` or `IP-CIDR6` rule. On a Mihomo client whose TUN route still takes precedence over the VPN interface, also add the same range to Mihomo's `tun.route-exclude-address`; routing rules select `DIRECT`, while `route-exclude-address` prevents the packets from entering the Mihomo TUN in the first place.
+
 ## Dependencies
 
 1. A subconverter frontend that supports customized backend.
