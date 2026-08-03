@@ -31,9 +31,9 @@ Every shipped configuration loads `rules/vpn_direct.list` as its first routing r
 
 ZeroTier networks may use an arbitrary managed IP range. If a network uses public address space, add that exact range to `rules/vpn_direct.list` as an `IP-CIDR` or `IP-CIDR6` rule. On a Mihomo client whose TUN route still takes precedence over the VPN interface, also add the same range to Mihomo's `tun.route-exclude-address`; routing rules select `DIRECT`, while `route-exclude-address` prevents the packets from entering the Mihomo TUN in the first place.
 
-## Academic publisher downloads
+## Academic content downloads
 
-Every shipped configuration maps `rules/academic_publishers_direct.list` directly to `DIRECT`. It covers major publisher platforms including ScienceDirect, ACS, Wiley, Springer Nature, Oxford Academic, RSC, Cambridge Core, AAAS, PNAS, SAGE, Taylor & Francis, Cell Press, IEEE Xplore, Frontiers, and MDPI. Keeping publisher sessions, PDF authorization requests, and downloads on the direct path avoids proxy rejection and redirect loops. The rules affect routing only and do not bypass publisher authentication or subscription requirements. Refresh the generated subscription after updating this rule.
+Every shipped configuration maps `rules/academic_content_direct.list` directly to `DIRECT`. It covers major publisher platforms, preprint servers such as Preprints.org, arXiv, bioRxiv, medRxiv, ChemRxiv, Research Square, TechRxiv, and SSRN, plus common open research repositories. Keeping sessions, PDF authorization requests, and downloads on the direct path avoids proxy rejection and redirect loops. The rules affect routing only and do not bypass publisher authentication or subscription requirements. Refresh the generated subscription after updating this rule.
 
 ## Dependencies
 

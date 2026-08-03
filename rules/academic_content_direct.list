@@ -27,3 +27,19 @@ DOMAIN,ieeexplore.ieee.org
 # Open-access publishers.
 DOMAIN-SUFFIX,frontiersin.org
 DOMAIN-SUFFIX,mdpi.com
+
+# Preprint servers and their file-delivery subdomains.
+DOMAIN-SUFFIX,preprints.org
+DOMAIN-SUFFIX,arxiv.org
+DOMAIN-SUFFIX,biorxiv.org
+DOMAIN-SUFFIX,medrxiv.org
+DOMAIN-SUFFIX,chemrxiv.org
+DOMAIN-SUFFIX,researchsquare.com
+DOMAIN-SUFFIX,techrxiv.org
+DOMAIN-SUFFIX,ssrn.com
+
+# General-purpose open research repositories used for preprints and files.
+DOMAIN-SUFFIX,osf.io
+DOMAIN-SUFFIX,osfstorage.org
+DOMAIN-SUFFIX,zenodo.org
+DOMAIN-SUFFIX,hal.science
