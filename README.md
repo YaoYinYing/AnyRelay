@@ -33,7 +33,7 @@ ZeroTier networks may use an arbitrary managed IP range. If a network uses publi
 
 ## ScienceDirect PDF downloads
 
-Every shipped configuration maps `rules/sciencedirect_direct.list` directly to `DIRECT`. Only `pdf.sciencedirectassets.com`, ScienceDirect's PDF delivery host, bypasses proxy groups; normal ScienceDirect browsing keeps using the existing routing policy. Refresh the generated subscription after updating this rule.
+Every shipped configuration maps `rules/sciencedirect_direct.list` directly to `DIRECT`. ScienceDirect article pages and `pdf.sciencedirectassets.com`, its PDF delivery host, bypass proxy groups together. Keeping the article session, PDF authorization request, and download on the same direct IP avoids a redirect loop back to the article page. Refresh the generated subscription after updating this rule.
 
 ## Dependencies
 

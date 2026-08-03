@@ -1,2 +1,4 @@
+# Keep the article session and PDF authorization request on the same direct IP.
+DOMAIN-SUFFIX,sciencedirect.com
 # ScienceDirect recommends bypassing proxies for its PDF delivery host.
 DOMAIN,pdf.sciencedirectassets.com
