@@ -1,0 +1,29 @@
+# Keep ScienceDirect article sessions and PDF authorization on the same direct IP.
+DOMAIN-SUFFIX,sciencedirect.com
+# ScienceDirect recommends bypassing proxies for its PDF delivery host.
+DOMAIN,pdf.sciencedirectassets.com
+
+# Publisher sites that work reliably over the direct connection.
+DOMAIN,pubs.acs.org
+DOMAIN,onlinelibrary.wiley.com
+
+# Springer Nature.
+DOMAIN,link.springer.com
+DOMAIN-SUFFIX,nature.com
+
+# University presses and learned societies.
+DOMAIN,academic.oup.com
+DOMAIN,pubs.rsc.org
+DOMAIN,www.cambridge.org
+DOMAIN-SUFFIX,science.org
+DOMAIN-SUFFIX,pnas.org
+
+# Other major journal platforms.
+DOMAIN,journals.sagepub.com
+DOMAIN-SUFFIX,tandfonline.com
+DOMAIN-SUFFIX,cell.com
+DOMAIN,ieeexplore.ieee.org
+
+# Open-access publishers.
+DOMAIN-SUFFIX,frontiersin.org
+DOMAIN-SUFFIX,mdpi.com
