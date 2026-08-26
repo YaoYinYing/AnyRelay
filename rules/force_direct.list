@@ -40,11 +40,10 @@ DOMAIN-SUFFIX,edu.cn,no-resolve
 DOMAIN,dl.google.com,no-resolve
 
 
-# deepseek api
+# AI services
 DOMAIN,platform.deepseek.com
-
-# siliconflow
 DOMAIN-SUFFIX,siliconflow.com
+DOMAIN-SUFFIX,allincode.top
 
 
 # government sites
