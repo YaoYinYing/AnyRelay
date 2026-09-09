@@ -49,3 +49,7 @@ DOMAIN-SUFFIX,allincode.top
 # government sites
 DOMAIN-SUFFIX,gov.cn
 DOMAIN-SUFFIX,fjrsda.com
+
+
+# CN companies
+DOMAIN-SUFFIX,levinthal.design
