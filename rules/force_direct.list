@@ -53,3 +53,6 @@ DOMAIN-SUFFIX,fjrsda.com
 
 # CN companies
 DOMAIN-SUFFIX,levinthal.design
+
+# internal sites
+DOMAIN-SUFFIX,internal.yaoyy.moe
