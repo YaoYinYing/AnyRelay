@@ -42,18 +42,21 @@ DOMAIN,dl.google.com,no-resolve
 
 
 # AI services
-DOMAIN,platform.deepseek.com
-DOMAIN-SUFFIX,siliconflow.com
-DOMAIN-SUFFIX,allincode.top
+DOMAIN,platform.deepseek.com,no-resolve
+DOMAIN-SUFFIX,siliconflow.com,no-resolve
+DOMAIN-SUFFIX,allincode.top,no-resolve
 
 
 # government sites
-DOMAIN-SUFFIX,gov.cn
-DOMAIN-SUFFIX,fjrsda.com
+DOMAIN-SUFFIX,gov.cn,no-resolve
+DOMAIN-SUFFIX,fjrsda.com,no-resolve
 
 
 # CN companies
-DOMAIN-SUFFIX,levinthal.design
+DOMAIN-SUFFIX,levinthal.design,no-resolve
+DOMAIN-SUFFIX,feishucdn.com,no-resolve
+DOMAIN-SUFFIX,feishu.cn,no-resolve
+
 
 # internal sites
 DOMAIN-SUFFIX,internal.yaoyy.moe
