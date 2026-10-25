@@ -12,6 +12,3 @@ DOMAIN-SUFFIX,ably.io
 DOMAIN,mtalk.google.com
 DOMAIN,android.clients.google.com
 
-# researchgate
-DOMAIN-SUFFIX,researchgate.net
-DOMAIN-SUFFIX,rgstatic.net
