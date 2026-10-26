@@ -18,7 +18,7 @@ DOMAIN-SUFFIX,science.org,no-resolve
 DOMAIN-SUFFIX,pnas.org,no-resolve
 
 # Other major journal platforms.
-DOMAIN-SUFFIX,,sagepub.com,no-resolve
+DOMAIN-SUFFIX,sagepub.com,no-resolve
 DOMAIN-SUFFIX,tandfonline.com,no-resolve
 DOMAIN-SUFFIX,cell.com,no-resolve
 DOMAIN-SUFFIX,ieee.org,no-resolve
