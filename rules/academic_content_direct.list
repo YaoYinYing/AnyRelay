@@ -1,45 +1,44 @@
 # Keep ScienceDirect article sessions and PDF authorization on the same direct IP.
-DOMAIN-SUFFIX,sciencedirect.com
+DOMAIN-SUFFIX,sciencedirect.com,no-resolve
 # ScienceDirect recommends bypassing proxies for its PDF delivery host.
-DOMAIN,pdf.sciencedirectassets.com
+DOMAIN-SUFFIX,sciencedirectassets.com,no-resolve
 
 # Publisher sites that work reliably over the direct connection.
-DOMAIN,pubs.acs.org
-DOMAIN,onlinelibrary.wiley.com
+DOMAIN-SUFFIX,wiley.com,no-resolve
 
 # Springer Nature.
-DOMAIN,link.springer.com
-DOMAIN-SUFFIX,nature.com
+DOMAIN-SUFFIX,springer.com,no-resolve
+DOMAIN-SUFFIX,nature.com,no-resolve
 
 # University presses and learned societies.
-DOMAIN,academic.oup.com
-DOMAIN,pubs.rsc.org
-DOMAIN,www.cambridge.org
-DOMAIN-SUFFIX,science.org
-DOMAIN-SUFFIX,pnas.org
+DOMAIN-SUFFIX,oup.com,no-resolve
+DOMAIN-SUFFIX,rsc.org,no-resolve
+DOMAIN-SUFFIX,cambridge.org,no-resolve
+DOMAIN-SUFFIX,science.org,no-resolve
+DOMAIN-SUFFIX,pnas.org,no-resolve
 
 # Other major journal platforms.
-DOMAIN,journals.sagepub.com
-DOMAIN-SUFFIX,tandfonline.com
-DOMAIN-SUFFIX,cell.com
-DOMAIN,ieeexplore.ieee.org
+DOMAIN-SUFFIX,,sagepub.com,no-resolve
+DOMAIN-SUFFIX,tandfonline.com,no-resolve
+DOMAIN-SUFFIX,cell.com,no-resolve
+DOMAIN-SUFFIX,ieee.org,no-resolve
 
 # Open-access publishers.
-DOMAIN-SUFFIX,frontiersin.org
-DOMAIN-SUFFIX,mdpi.com
+DOMAIN-SUFFIX,frontiersin.org,no-resolve
+DOMAIN-SUFFIX,mdpi.com,no-resolve
 
 # Preprint servers and their file-delivery subdomains.
-DOMAIN-SUFFIX,preprints.org
-DOMAIN-SUFFIX,arxiv.org
-DOMAIN-SUFFIX,biorxiv.org
-DOMAIN-SUFFIX,medrxiv.org
-DOMAIN-SUFFIX,chemrxiv.org
-DOMAIN-SUFFIX,researchsquare.com
-DOMAIN-SUFFIX,techrxiv.org
-DOMAIN-SUFFIX,ssrn.com
+DOMAIN-SUFFIX,preprints.org,no-resolve
+DOMAIN-SUFFIX,arxiv.org,no-resolve
+DOMAIN-SUFFIX,biorxiv.org,no-resolve
+DOMAIN-SUFFIX,medrxiv.org,no-resolve
+DOMAIN-SUFFIX,chemrxiv.org,no-resolve
+DOMAIN-SUFFIX,researchsquare.com,no-resolve
+DOMAIN-SUFFIX,techrxiv.org,no-resolve
+DOMAIN-SUFFIX,ssrn.com,no-resolve
 
 # General-purpose open research repositories used for preprints and files.
-DOMAIN-SUFFIX,osf.io
-DOMAIN-SUFFIX,osfstorage.org
-DOMAIN-SUFFIX,zenodo.org
-DOMAIN-SUFFIX,hal.science
+DOMAIN-SUFFIX,osf.io,no-resolve
+DOMAIN-SUFFIX,osfstorage.org,no-resolve
+DOMAIN-SUFFIX,zenodo.org,no-resolve
+DOMAIN-SUFFIX,hal.science,no-resolve
