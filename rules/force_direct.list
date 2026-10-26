@@ -68,6 +68,9 @@ DOMAIN-SUFFIX,feishucdn.com,no-resolve
 DOMAIN-SUFFIX,feishu.cn,no-resolve
 DOMAIN-SUFFIX,hecegene.com,no-resolve
 
+# researchgate
+DOMAIN-SUFFIX,researchgate.net,no-resolve
+DOMAIN-SUFFIX,rgstatic.net,no-resolve
 
 # internal sites
 DOMAIN-SUFFIX,internal.yaoyy.moe
