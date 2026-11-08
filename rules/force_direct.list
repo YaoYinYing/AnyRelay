@@ -9,8 +9,6 @@ IP-CIDR,172.89.94.0/24,no-resolve
 
 
 
-
-
 DOMAIN-SUFFIX,japs.yaoyy.moe,no-resolve
 IP-CIDR,152.70.241.0/24,no-resolve
 DOMAIN-SUFFIX,frp.freefrp.net,no-resolve
@@ -67,6 +65,7 @@ DOMAIN-SUFFIX,levinthal.design,no-resolve
 DOMAIN-SUFFIX,feishucdn.com,no-resolve
 DOMAIN-SUFFIX,feishu.cn,no-resolve
 DOMAIN-SUFFIX,hecegene.com,no-resolve
+DOMAIN-SUFFIX,cloudflare-cn.com,no-resolve
 
 # researchgate
 DOMAIN-SUFFIX,researchgate.net,no-resolve
