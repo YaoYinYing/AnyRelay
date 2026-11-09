@@ -73,3 +73,7 @@ DOMAIN-SUFFIX,rgstatic.net,no-resolve
 
 # internal sites
 DOMAIN-SUFFIX,internal.yaoyy.moe
+
+
+# copyright
+DOMAIN-SUFFIX,snapgene.com,no-resolve
