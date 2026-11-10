@@ -66,6 +66,8 @@ DOMAIN-SUFFIX,feishucdn.com,no-resolve
 DOMAIN-SUFFIX,feishu.cn,no-resolve
 DOMAIN-SUFFIX,hecegene.com,no-resolve
 DOMAIN-SUFFIX,cloudflare-cn.com,no-resolve
+DOMAIN-SUFFIX,simplexfoundry.com,no-resolve
+
 
 # researchgate
 DOMAIN-SUFFIX,researchgate.net,no-resolve
